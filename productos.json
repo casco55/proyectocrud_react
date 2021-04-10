@@ -1,0 +1,59 @@
+{
+  "productos": [
+    {
+      "nombre": "Pastel de Chocolate",
+      "precio": "60",
+      "id": 5
+    },
+    {
+      "nombre": "Pastel de Fresa",
+      "precio": "40",
+      "id": 6
+    },
+    {
+      "nombre": "Pastel de Fresa",
+      "precio": "150",
+      "id": 7
+    },
+    {
+      "nombre": "Roles de Canela",
+      "precio": "70",
+      "id": 8
+    },
+    {
+      "nombre": "Chocolate Caliente",
+      "precio": "10",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "nombre": "Pastel de Vainilla con Chocolate",
+      "precio": "100"
+    },
+    {
+      "nombre": "Roles de Canela",
+      "precio": "10",
+      "id": 11
+    },
+    {
+      "nombre": "Pastel",
+      "precio": "450",
+      "id": 12
+    },
+    {
+      "nombre": "Pastel action",
+      "precio": "300",
+      "id": 13
+    },
+    {
+      "nombre": "A",
+      "precio": "2",
+      "id": 14
+    },
+    {
+      "nombre": "ghnhgngh",
+      "precio": "765756",
+      "id": 15
+    }
+  ]
+}
