@@ -1,4 +1,4 @@
-La carpeta react_php contienes las apis construidas por mi, que se deben utilizar desde otro dominio o subdominio. Estos archivos php contienen los Headers necesarios para que la aplicación pueda consumirlos.
+La carpeta react_php contiene las apis construidas por mi, que se deben utilizar desde otro dominio o subdominio. Estos archivos php contienen los Headers necesarios para que la aplicación pueda consumirlos.
 
 # Getting Started with Create React App
 
