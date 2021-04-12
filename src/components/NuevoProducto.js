@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 
-
 // Redux
 import {connect} from 'react-redux';
 import { agregarProducto } from '../actions/productosActions';
+
+
 
 class NuevoProducto extends Component {
 
@@ -14,21 +15,21 @@ class NuevoProducto extends Component {
           error: false
      }
      
-     /* nombreProducto = e => {
+     nombreProducto = e => {
           this.setState({nombre: e.target.value })
      }
 
      precioProducto = e => {
           this.setState({precio: e.target.value })
-     } */
-     
+          
+     }
+
      nuevoProducto = e => {
           e.preventDefault();
-          
+
           const { nombre, precio } = this.state;
           
           if(nombre === '' || precio === '') {
-
                this.setState({error: true});
                return;
           } 
@@ -46,7 +47,7 @@ class NuevoProducto extends Component {
           // redireccionar
           this.props.history.push('/');
      }
-
+     
      render() { 
           const {error} = this.state;
           return ( 
@@ -58,13 +59,13 @@ class NuevoProducto extends Component {
                               <form onSubmit={this.nuevoProducto}>
                                    <div className="form-group">
                                         <label>Titulo</label>
-                                        <input /* onChange={this.nombreProducto} */ id="nameProd" type="text" className="form-control" placeholder="Titulo" />
+                                        <input name="nombre" onChange={this.nombreProducto} type="text" className="form-control" placeholder="Titulo" />
                                    </div>
                                    <div className="form-group">
                                         <label>Precio del Producto</label>
-                                        <input /* onChange={this.precioProducto} */ id="priceProd"  type="text" className="form-control" placeholder="Precio" />
+                                        <input onChange={this.precioProducto}  type="text" className="form-control" placeholder="Precio" />
                                    </div>
-                                   <button type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Agregar</button>
+                                   <button name="apellido" type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Agregar</button>
                               </form>
                               {error ? 
                                    <div className="font-weight-bold alert alert-danger text-center mt-4 ">

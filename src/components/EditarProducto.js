@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 
+
 // Redux
 import {connect} from 'react-redux';
 import { mostrarProducto, editarProducto } from '../actions/productosActions';
@@ -19,6 +20,18 @@ class EditarProducto extends Component {
       
      
      }
+     enterNombre = (e) => {
+          if(e.which === 13) {
+          this.setState({nombre: e.target.value})
+          console.log(this.state.nombre)
+          }
+          }
+     enterPrecio = (e) => {
+          if(e.which === 13) {
+          this.setState({precio: e.target.value})
+          console.log(this.state.precio)
+          }
+          }
      componentWillReceiveProps(nextProps, nextState){
 
         console.log(nextProps.producto);
@@ -29,9 +42,11 @@ class EditarProducto extends Component {
         });
           
      } 
-     
+    
      nombreProducto = e => {
           this.setState({nombre: e.target.value })
+          
+          
      }
 
      precioProducto = e => {
@@ -40,9 +55,11 @@ class EditarProducto extends Component {
 
      actualizarProducto = e => {
           e.preventDefault();
-         
+          
           
           const { nombre, precio } = this.state;
+          
+          
           
           if(nombre === '' || precio === '') {
                this.setState({error: true});
@@ -63,10 +80,8 @@ class EditarProducto extends Component {
           // Actualizar el Producto Actual
           this.props.editarProducto(infoProducto);
 
-
-          setTimeout(function() {
-               this.props.history.push('/');
-          }.bind(this), 1000)
+          this.props.history.push('/'); 
+         
           // redireccionar
           
      }
@@ -82,11 +97,11 @@ class EditarProducto extends Component {
                               <form onSubmit={this.actualizarProducto}>
                                    <div className="form-group">
                                         <label>Titulo</label>
-                                        <input defaultValue={nombre} onChange={this.nombreProducto} type="text" className="form-control" placeholder="Titulo" />
+                                        <input defaultValue={nombre} id="nombre" onChange={this.nombreProducto} onBlur={this.nombreProducto} onKeyPress={this.enterNombre} type="text" className="form-control" placeholder="Titulo" />
                                    </div>
                                    <div className="form-group">
                                         <label>Precio del Producto</label>
-                                        <input defaultValue={precio}   onChange={this.precioProducto}  type="text" className="form-control" placeholder="Precio" />
+                                        <input defaultValue={precio} id="precio" onChange={this.precioProducto} onBlur={this.precioProducto} onKeyPress={this.enterPrecio} type="text" className="form-control" placeholder="Precio" />
                                    </div>
                                    <button type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Guardar Cambios</button>
                               </form>
